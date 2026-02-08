@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Chocolate Day</title>
+
+  <!-- Bootstrap -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <style>
+    body {
+      min-height: 100vh;
+      background: linear-gradient(
+        180deg,
+        #f5d0c5,
+        #d69a7f,
+        #8b4a2f
+      );
+      color: #3a1f14;
+      font-family: "Segoe UI", sans-serif;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+    }
+
+    .choco {
+      font-size: 5rem;
+      cursor: pointer;
+      animation: float 3s ease-in-out infinite;
+    }
+
+    @keyframes float {
+      0% { transform: translateY(0); }
+      50% { transform: translateY(-12px); }
+      100% { transform: translateY(0); }
+    }
+
+    .hint {
+      opacity: 0.8;
+      margin-top: 10px;
+      font-size: 0.95rem;
+    }
+
+    .message {
+      margin-top: 30px;
+      font-size: 1.05rem;
+      opacity: 0;
+      transition: opacity 1s ease;
+      line-height: 1.6;
+    }
+
+    .message.show {
+      opacity: 1;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="px-4">
+    <div id="choco" class="choco">🍫</div>
+    <h3>Happy Chocolate Day Nandu❤️</h3>
+
+    <p class="hint">
+      Tap this chocolate
+    </p>
+
+    <div id="message" class="message">
+      I know things haven’t been easy between us.<br><br>
+
+      So today, I didn’t want to ask for anything<br>
+      or explain anything.<br><br>
+
+      I just wanted to give you something sweet —<br>
+      a small reminder that you’re special to me,<br>
+      and that even from far away,<br>
+      I care about you… quietly, sincerely.
+    </div>
+  </div>
+
+  <script>
+    const choco = document.getElementById("choco");
+    const message = document.getElementById("message");
+
+    choco.addEventListener("click", () => {
+      message.classList.add("show");
+    });
+  </script>
+
+</body>
+</html>
